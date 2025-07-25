@@ -11,7 +11,7 @@ Driver for TDA7439/TDA7439DS/TDA7440D audioprocessors.
 ## Installation
 
 ```sh
-idf.py add-dependency "esp-idf-lib/tda74xx^1.0.0
+idf.py add-dependency esp-idf-lib/tda74xx^1.0.0
 ```
 
 ## Support
