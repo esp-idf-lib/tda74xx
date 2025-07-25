@@ -45,5 +45,5 @@ menu "Example configuration"
         help
             Treble control in dB at 2dB step.
 
-    rsource "../../../../devtools/Kconfig.i2c"
+    rsource "../../../Kconfig.i2c"
 endmenu
