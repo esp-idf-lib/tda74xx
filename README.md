@@ -1,5 +1,9 @@
 # esp-idf-lib/tda74xx
 
+[![Build examples](https://github.com/esp-idf-lib/tda74xx/actions/workflows//build.yml/badge.svg)](https://github.com/esp-idf-lib/tda74xx/actions/workflows//build.yml)
+[![Build docs](https://github.com/esp-idf-lib/tda74xx/actions/workflows//build-docs.yml/badge.svg)](https://github.com/esp-idf-lib/tda74xx/actions/workflows//build-docs.yml)
+[![Validation](https://github.com/esp-idf-lib/tda74xx/actions/workflows//validate-component.yml/badge.svg)](https://github.com/esp-idf-lib/tda74xx/actions/workflows//validate-component.yml)
+
 Driver for TDA7439/TDA7439DS/TDA7440D audioprocessors.
 
 * [Documentation](https://esp-idf-lib.github.io/tda74xx/)
@@ -11,7 +15,7 @@ Driver for TDA7439/TDA7439DS/TDA7440D audioprocessors.
 ## Installation
 
 ```sh
-idf.py add-dependency esp-idf-lib/tda74xx^1.0.0
+idf.py add-dependency esp-idf-lib/tda74xx
 ```
 
 ## Support
