@@ -1,7 +1,7 @@
 ---
 name: tda74xx
 description: Driver for TDA7439/TDA7439DS/TDA7440D audioprocessors
-version: 1.0.2
+version: 1.0.3
 groups:
   - misc
 code_owners: UncleRus
