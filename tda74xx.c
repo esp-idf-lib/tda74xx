@@ -149,7 +149,7 @@ esp_err_t tda74xx_set_equalizer_gain(i2c_dev_t *dev, tda74xx_band_t band, int8_t
     CHECK_ARG(dev && gain_db >= TDA74XX_MIN_EQ_GAIN && gain_db <= TDA74XX_MAX_EQ_GAIN);
 
     uint8_t reg;
-    switch(band)
+    switch (band)
     {
         case TDA74XX_BAND_BASS:
             reg = REG_BASS_GAIN;
@@ -169,7 +169,7 @@ esp_err_t tda74xx_get_equalizer_gain(i2c_dev_t *dev, tda74xx_band_t band, int8_t
     CHECK_ARG(dev && gain_db);
 
     uint8_t reg;
-    switch(band)
+    switch (band)
     {
         case TDA74XX_BAND_BASS:
             reg = REG_BASS_GAIN;

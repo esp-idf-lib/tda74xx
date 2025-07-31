@@ -60,7 +60,8 @@ extern "C" {
 /**
  * Audio channel
  */
-typedef enum {
+typedef enum
+{
     TDA74XX_CHANNEL_LEFT = 0,
     TDA74XX_CHANNEL_RIGHT
 } tda74xx_channel_t;
@@ -68,7 +69,8 @@ typedef enum {
 /**
  * Equalizer band
  */
-typedef enum {
+typedef enum
+{
     TDA74XX_BAND_BASS = 0,
     TDA74XX_BAND_MIDDLE,    //!< Not supported on TDA7440
     TDA74XX_BAND_TREBLE,
