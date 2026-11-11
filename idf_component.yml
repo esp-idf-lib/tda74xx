@@ -1,5 +1,5 @@
 ---
-version: 1.0.7
+version: 1.0.8
 description: Driver for TDA7439/TDA7439DS/TDA7440D audioprocessors
 license: MIT
 dependencies:
