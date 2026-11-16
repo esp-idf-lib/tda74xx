@@ -9,41 +9,50 @@ menu "Example configuration"
             supports middle-range control.
 
     config EXAMPLE_INPUT_CHANNEL
-        int "Input channel to use, from 0 to 3"
-        default 0
+        int "Input to use, from 1 to 4"
+        range 1 4
+        default 2
         help
-            Input gain in dB at 2dB step.
+            Number of the input of the input selector, as it is marked on the
+            board: 1 is IN1 and 4 is IN4. The chip powers up with IN2.
 
     config EXAMPLE_INPUT_GAIN
         int "Input gain, from 0 to 30"
+        range 0 30
         default 28
         help
-            Input gain in dB at 2dB step.
+            Input gain in dB at 2 dB step, so only even values are valid.
 
     config EXAMPLE_VOLUME
-        int "The volume control in dB, from -48 to 0"
+        int "The volume control in dB, from -47 to 0"
+        range -47 0
         default 0
         help
-            The volume control in dB at 1dB step.
+            The volume control in dB at 1 dB step. The chip has no level below
+            -47 dB: the output is muted instead, see tda74xx_set_volume_mute().
 
     config EXAMPLE_BASS
         int "Bass control in dB, from -14 to 14"
+        range -14 14
         default 0
         help
-            Bass control in dB at 2dB step.
+            Bass control in dB at 2 dB step, so only even values are valid.
 
     config EXAMPLE_MIDDLE
         int "Middle-range control in dB, from -14 to 14"
+        range -14 14
         default 0
         help
-            Middle-range control in dB at 2dB step.
+            Middle-range control in dB at 2 dB step, so only even values are
+            valid.
         depends on EXAMPLE_USING_MIDDLE_RANGE_CONTROL
 
     config EXAMPLE_TREBLE
         int "Treble control in dB, from -14 to 14"
+        range -14 14
         default 0
         help
-            Treble control in dB at 2dB step.
+            Treble control in dB at 2 dB step, so only even values are valid.
 
     rsource "../../../Kconfig.i2c"
 endmenu
