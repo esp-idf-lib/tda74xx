@@ -1,8 +1,8 @@
 #include <stdio.h>
+#include <string.h>
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
 #include <tda74xx.h>
-#include <string.h>
 
 void tda74xx_test(void *pvParameters)
 {
@@ -19,8 +19,8 @@ void tda74xx_test(void *pvParameters)
     // Set input gain
     ESP_ERROR_CHECK(tda74xx_set_input_gain(&dev, CONFIG_EXAMPLE_INPUT_GAIN));
 
-    // Switch input
-    ESP_ERROR_CHECK(tda74xx_set_input(&dev, CONFIG_EXAMPLE_INPUT_CHANNEL));
+    // Switch input: the configuration holds the input number, 1..4
+    ESP_ERROR_CHECK(tda74xx_set_input(&dev, (tda74xx_input_t)(4 - CONFIG_EXAMPLE_INPUT_CHANNEL)));
 
     // Set volume & eq
     ESP_ERROR_CHECK(tda74xx_set_volume(&dev, CONFIG_EXAMPLE_VOLUME));
@@ -30,12 +30,12 @@ void tda74xx_test(void *pvParameters)
     ESP_ERROR_CHECK(tda74xx_set_equalizer_gain(&dev, TDA74XX_BAND_MIDDLE, CONFIG_EXAMPLE_MIDDLE));
 #endif
 
-    int8_t vol = -48;
+    int8_t vol = TDA74XX_MIN_VOLUME;
     while (1)
     {
         ESP_ERROR_CHECK(tda74xx_set_volume(&dev, vol));
         if (++vol > 0)
-            vol = -48;
+            vol = TDA74XX_MIN_VOLUME;
         vTaskDelay(pdMS_TO_TICKS(250));
     }
 }
